@@ -1,6 +1,9 @@
 <template>
   <div>
     <audio src="../assets/audio/UEHWUT2384FH9VWEQ3423F4.mp3" ref="audio" controls></audio>
+    <Cover defaultType="circle">
+      <img src="../assets/image/cover.jpg">
+    </Cover>
     <Slider :defaultValue="50" @click="sliderClickHandler" @touch="sliderTouchHandler"></Slider>
     <!-- <div class="vol" ref="vol" @touchstart="volMousedownHandler">
       <div class="vol-wrapper">
@@ -16,9 +19,11 @@
 </template>
 
 <script>
+import Cover from "./Cover";
 import Slider from "./Slider";
 export default {
   components: {
+    Cover,
     Slider
   },
   data() {
@@ -31,7 +36,7 @@ export default {
         //播放速度
         playbackRate: 1,
         //自动播放
-        autoplay: true,
+        autoplay: false,
         //循环播放
         loop: "loop",
         //预加载
@@ -80,4 +85,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import (reference) "../assets/less/variables.less";
 </style>
