@@ -50,11 +50,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import (reference) "../assets/less/variables.less";
 .slider {
   width: 100%;
   height: 0.2rem;
   margin: 0.4rem auto;
-  background-color: lightgray;
+  background-color: @disable-color;
   .slider-wrapper {
     height: 0.2rem;
     margin-right: 1rem;
@@ -66,8 +67,8 @@ export default {
       height: 1rem;
       margin: auto;
       border-radius: 50%;
-      background-color: white;
-      border: 0.2rem solid yellowgreen;
+      background-color: @background-color;
+      border: 0.2rem solid @primary-color;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -75,7 +76,7 @@ export default {
     .slider-bar {
       width: 0;
       height: 100%;
-      background-color: yellowgreen;
+      background-color: @primary-color;
     }
   }
 }

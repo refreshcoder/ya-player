@@ -40,6 +40,7 @@ export default {
     };
   },
   watch: {
+    //监听contorl数据变化 同步至audio元素
     control: {
       handler: function() {
         const keys = Object.keys(this.control);
@@ -50,23 +51,25 @@ export default {
             this.$refs.audio[key] = this.control[key];
           }
         });
-        console.log(this.control);
       },
       deep: true
     }
   },
   methods: {
+    //初始化audio元素属性
     init() {
       const keys = Object.keys(this.control);
       keys.map(key => {
         this.$refs.audio[key] = this.control[key];
       });
     },
+    //slider点击事件
     sliderClickHandler(value) {
-      this.volume = (value / 100).toFixed(1) - 0;
+      this.control.volume = (value / 100).toFixed(1) - 0;
     },
+    //slider滑动事件
     sliderTouchHandler(value) {
-      this.volume = (value / 100).toFixed(1) - 0;
+      this.control.volume = (value / 100).toFixed(1) - 0;
     }
   },
   created() {},
