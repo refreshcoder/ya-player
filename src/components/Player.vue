@@ -1,30 +1,23 @@
 <template>
   <div>
+    <Swiper></Swiper>
     <audio src="../assets/audio/UEHWUT2384FH9VWEQ3423F4.mp3" ref="audio" controls></audio>
     <Cover defaultType="circle">
       <img src="../assets/image/cover.jpg">
     </Cover>
     <Slider :defaultValue="50" @click="sliderClickHandler" @touch="sliderTouchHandler"></Slider>
-    <!-- <div class="vol" ref="vol" @touchstart="volMousedownHandler">
-      <div class="vol-wrapper">
-        <div class="vol-slider-bar" :style="{width:`${control.volume*100}%`}"></div>
-        <span
-          class="vol-slider"
-          ref="volSlider"
-          :style="{left:`${control.volume*100}%`}"
-        ></span>
-      </div>
-    </div>-->
   </div>
 </template>
 
 <script>
 import Cover from "./Cover";
 import Slider from "./Slider";
+import Swiper from "./Swiper";
 export default {
   components: {
     Cover,
-    Slider
+    Slider,
+    Swiper
   },
   data() {
     return {

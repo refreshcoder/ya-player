@@ -1,7 +1,7 @@
 <template>
   <div class="cover-outer">
     <div class="cover" ref="cover">
-      <div class="cover-inner" :class="{circle:isCircle}">
+      <div class="cover-inner" :class="{circle:isCircle,play:isPlay}">
         <slot></slot>
       </div>
     </div>
@@ -11,15 +11,17 @@
 <script>
 export default {
   props: {
-    defaultType: String
+    defaultType: String,
+    defaultState: String,
   },
   data() {
     return {
       isCircle: this.defaultType==="circle" ? true : false,
+      isPlay: this.defaultState===true ? true : false
     };
   },
   methods: {
-    
+
   },
   mounted() {}
 };
@@ -54,11 +56,13 @@ export default {
       }
     }
     .circle{
-      animation: run 20s linear infinite both;
       border-radius: 50%;
       img{
         border-radius: 50%;
       }
+    }
+    .play{
+      animation: run 20s linear infinite both;
     }
   }
 }
